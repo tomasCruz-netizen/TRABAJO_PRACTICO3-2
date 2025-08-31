@@ -1,3 +1,7 @@
+
+import javax.swing.ButtonGroup;
+import javax.swing.JFrame;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,6 +19,17 @@ public class Conversor extends javax.swing.JFrame {
      */
     public Conversor() {
         initComponents();
+        ButtonGroup miGrupo = new ButtonGroup();
+        miGrupo.add(jRKelvin);
+        miGrupo.add(jRCelcius);
+        miGrupo.add(jRFarenheit);
+        miGrupo.add(jRRadianes);
+        
+     jPanel2.add(jRKelvin);
+     jPanel2.add(jRCelcius);
+     jPanel2.add(jRFarenheit);
+     jPanel2.add(jRRadianes);
+        
     }
 
     /**
@@ -33,11 +48,11 @@ public class Conversor extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtBox = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jButton1 = new javax.swing.JButton();
+        jRFarenheit = new javax.swing.JRadioButton();
+        jRCelcius = new javax.swing.JRadioButton();
+        jRKelvin = new javax.swing.JRadioButton();
+        jRRadianes = new javax.swing.JRadioButton();
+        jBConvertir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,15 +79,15 @@ public class Conversor extends javax.swing.JFrame {
 
         jLabel2.setText("Ingrese temperatura en grados");
 
-        jRadioButton1.setText("A Farenheit");
+        jRFarenheit.setText("A Farenheit");
 
-        jRadioButton2.setText("A Celsius");
+        jRCelcius.setText("A Celsius");
 
-        jRadioButton3.setText("A Kelvin");
+        jRKelvin.setText("A Kelvin");
 
-        jRadioButton4.setText("A Radianes");
+        jRRadianes.setText("A Radianes");
 
-        jButton1.setText("Convertir");
+        jBConvertir.setText("Convertir");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -81,12 +96,12 @@ public class Conversor extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton1))
+                    .addComponent(jRKelvin)
+                    .addComponent(jRFarenheit))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton4))
+                    .addComponent(jRCelcius)
+                    .addComponent(jRRadianes))
                 .addGap(51, 51, 51))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -101,7 +116,7 @@ public class Conversor extends javax.swing.JFrame {
                         .addComponent(txtBox, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(127, 127, 127)
-                        .addComponent(jButton1)))
+                        .addComponent(jBConvertir)))
                 .addContainerGap(53, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -116,16 +131,16 @@ public class Conversor extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtBox, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(8, 8, 8)
-                        .addComponent(jRadioButton2)
+                        .addComponent(jRCelcius)
                         .addGap(18, 18, 18)
-                        .addComponent(jRadioButton4))
+                        .addComponent(jRRadianes))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(62, 62, 62)
-                        .addComponent(jRadioButton3)
+                        .addComponent(jRKelvin)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jRadioButton1)))
+                        .addComponent(jRFarenheit)))
                 .addGap(35, 35, 35)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jBConvertir, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(98, Short.MAX_VALUE))
         );
 
@@ -202,16 +217,16 @@ public class Conversor extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jBConvertir;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JRadioButton jRCelcius;
+    private javax.swing.JRadioButton jRFarenheit;
+    private javax.swing.JRadioButton jRKelvin;
+    private javax.swing.JRadioButton jRRadianes;
     private javax.swing.JTextField txtBox;
     // End of variables declaration//GEN-END:variables
 }
