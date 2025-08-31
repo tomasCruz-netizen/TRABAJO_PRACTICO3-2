@@ -194,17 +194,7 @@ public class Conversor extends javax.swing.JFrame {
 
     private void txtBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBoxActionPerformed
         
-        try{
-        int num = Integer.parseInt(txtBox.getText());
-                
-        
-        }
-        
-        
-        catch(NumberFormatException e){
-            JOptionPane.showMessageDialog(this, " solo se permiten numeros ");
-        }
-                
+                       
                 
                 
         
@@ -212,7 +202,20 @@ public class Conversor extends javax.swing.JFrame {
     }//GEN-LAST:event_txtBoxActionPerformed
 
     private void jBConvertirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBConvertirActionPerformed
-        ConvertirTemperatura();
+          try{
+        int num = Integer.parseInt(txtBox.getText());
+                 ConvertirTemperatura();
+        
+        }
+        
+        
+        catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(this, " solo se permiten numeros ");
+        }
+        
+    
+
+        
     }//GEN-LAST:event_jBConvertirActionPerformed
     public void ConvertirTemperatura( ){
        double num = Double.parseDouble(txtBox.getText());
