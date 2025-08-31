@@ -1,6 +1,7 @@
 
 import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -77,7 +78,13 @@ public class Conversor extends javax.swing.JFrame {
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
-        jLabel2.setText("Ingrese temperatura en grados");
+        jLabel2.setText("Ingrese temperatura en CELSIUS");
+
+        txtBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBoxActionPerformed(evt);
+            }
+        });
 
         jRFarenheit.setText("A Farenheit");
 
@@ -88,6 +95,11 @@ public class Conversor extends javax.swing.JFrame {
         jRRadianes.setText("A Radianes");
 
         jBConvertir.setText("Convertir");
+        jBConvertir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBConvertirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -109,15 +121,15 @@ public class Conversor extends javax.swing.JFrame {
                         .addGap(62, 62, 62)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel2))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(153, 153, 153)
                         .addComponent(txtBox, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(127, 127, 127)
+                        .addContainerGap()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(125, 125, 125)
                         .addComponent(jBConvertir)))
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -128,7 +140,7 @@ public class Conversor extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(12, 12, 12)
                         .addComponent(txtBox, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(8, 8, 8)
                         .addComponent(jRCelcius)
@@ -139,9 +151,9 @@ public class Conversor extends javax.swing.JFrame {
                         .addComponent(jRKelvin)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jRFarenheit)))
-                .addGap(35, 35, 35)
+                .addGap(81, 81, 81)
                 .addComponent(jBConvertir, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(98, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         jDesktopPane1.setLayer(jPanel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -153,14 +165,14 @@ public class Conversor extends javax.swing.JFrame {
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                 .addGap(98, 98, 98)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(98, Short.MAX_VALUE))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(22, 22, 22))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -180,7 +192,49 @@ public class Conversor extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
+    private void txtBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBoxActionPerformed
+        
+        try{
+        int num = Integer.parseInt(txtBox.getText());
+                
+        
+        }
+        
+        
+        catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(this, " solo se permiten numeros ");
+        }
+                
+                
+                
+        
+       
+    }//GEN-LAST:event_txtBoxActionPerformed
+
+    private void jBConvertirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBConvertirActionPerformed
+        ConvertirTemperatura();
+    }//GEN-LAST:event_jBConvertirActionPerformed
+    public void ConvertirTemperatura( ){
+       double num = Double.parseDouble(txtBox.getText());
+       double resultado;
+       if(jRKelvin.isSelected()){
+          resultado =  num+273.15;
+           JOptionPane.showMessageDialog(this, resultado);
+       }else if(jRFarenheit.isSelected()){
+       resultado=(num*9)/5+32;
+       JOptionPane.showMessageDialog(this, resultado);
+       }else if(jRCelcius.isSelected()){
+           JOptionPane.showMessageDialog(this, " ya esta en celcius ");
+       
+       }else if(jRRadianes.isSelected()){
+       resultado = (num+273.15)*9/5;
+       JOptionPane.showMessageDialog(this, resultado);
+       
+       }
+       
+    
+    }
+    /*
      * @param args the command line arguments
      */
     public static void main(String args[]) {
