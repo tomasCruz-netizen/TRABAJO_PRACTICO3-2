@@ -30,6 +30,8 @@ public class Conversor extends javax.swing.JFrame {
      jPanel2.add(jRCelcius);
      jPanel2.add(jRFarenheit);
      jPanel2.add(jRRadianes);
+     
+     
         
     }
 
